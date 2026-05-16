@@ -1,7 +1,7 @@
-public EmployeePerformanceReportGenerator {
+public class EmployeePerformanceReportGenerator {
     public void printPerformanceReport(Employee e){
         // code to print performance report
-        System.out.println("Performance report of the employee: " + e.getEmployeeName());
+        System.out.println("Performance report of the employee: ");
     }
 }
 

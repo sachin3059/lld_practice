@@ -1,3 +1,6 @@
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class User {
     private String name;
     private String email;

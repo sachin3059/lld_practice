@@ -23,7 +23,7 @@ class WhatsAppSender implements Notifier {
     }
 }
 
-class OrderService {
+public class OrderService {
 
     // Loose coupling using interface
     private final Notifier notifier;
@@ -40,7 +40,7 @@ class OrderService {
     }
 }
 
-public class Main {
+class Main {
 
     public static void main(String[] args) {
 

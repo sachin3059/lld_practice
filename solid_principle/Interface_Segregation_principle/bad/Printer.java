@@ -10,7 +10,7 @@ public interface Printer {
     void faxDocument();
 }
 
-public class SimplePrinter implements Printer {
+class SimplePrinter implements Printer {
     public void printDocument() {
         System.out.println("Printing document...");
     }

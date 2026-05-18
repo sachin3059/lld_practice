@@ -38,3 +38,8 @@ class CashOnDelivery implements Payment {
 void ChargeCustomer(OnlinePayment p, double amount){
     p.processOnline(amount);
 }
+@Override
+public void generateReceipt() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'generateReceipt'");
+}

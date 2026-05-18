@@ -4,24 +4,24 @@ public interface Printer {
 }
 
 // Scanner.java
-public interface Scanner {
+interface Scanner {
     void scanDocument();
 }
 
 // Fax.java
-public interface Fax {
+interface Fax {
     void faxDocument();
 }
 
 // SimplePrinter.java
-public class SimplePrinter implements Printer {
+class SimplePrinter implements Printer {
     public void printDocument() {
         System.out.println("Printing document...");
     }
 }
 
 // MultiFunctionPrinter.java
-public class MultiFunctionPrinter implements Printer, Scanner, Fax {
+class MultiFunctionPrinter implements Printer, Scanner, Fax {
     public void printDocument() {
         System.out.println("Printing document...");
     }
@@ -36,7 +36,7 @@ public class MultiFunctionPrinter implements Printer, Scanner, Fax {
 }
 
 // Main.java
-public class Main {
+class Main {
     public static void main(String[] args) {
         Printer simplePrinter = new SimplePrinter();
         simplePrinter.printDocument();

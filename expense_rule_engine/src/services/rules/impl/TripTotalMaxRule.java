@@ -1,11 +1,11 @@
-package expense_rule_engine.src.impl;
+package expense_rule_engine.src.services.rules.impl;
 
 import java.util.List;
 import java.util.Optional;
 
 import expense_rule_engine.src.models.Expense;
-import expense_rule_engine.src.rules.TripRule;
-import expense_rule_engine.src.rules.Violation;
+import expense_rule_engine.src.services.rules.TripRule;
+import expense_rule_engine.src.services.rules.Violation;
 
 public class TripTotalMaxRule implements TripRule {
     private final double maxAmount;

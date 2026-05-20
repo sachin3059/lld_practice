@@ -1,4 +1,4 @@
-package expense_rule_engine.src.rules;
+package expense_rule_engine.src.services.rules;
 
 public class Violation {
     private final String message;

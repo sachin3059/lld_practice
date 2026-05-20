@@ -1,10 +1,10 @@
-package expense_rule_engine.src.impl;
+package expense_rule_engine.src.services.rules.impl;
 
 import java.util.Optional;
 
 import expense_rule_engine.src.models.Expense;
-import expense_rule_engine.src.rules.ExpenseRule;
-import expense_rule_engine.src.rules.Violation;
+import expense_rule_engine.src.services.rules.ExpenseRule;
+import expense_rule_engine.src.services.rules.Violation;
 
 public class MaxAmountRule implements ExpenseRule {
     private final double maxAmount;

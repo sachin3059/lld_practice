@@ -1,4 +1,4 @@
-package expense_rule_engine.src.models;
+package expense_rule_engine.models;
 
 // Ideally made using a builder pattern
 public class Expense {

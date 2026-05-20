@@ -1,16 +1,16 @@
-package expense_rule_engine.src.services.impl;
+package expense_rule_engine.services.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import expense_rule_engine.src.models.Expense;
-import expense_rule_engine.src.models.ExpenseType;
-import expense_rule_engine.src.services.RuleEngine;
-import expense_rule_engine.src.services.rules.ExpenseRule;
-import expense_rule_engine.src.services.rules.TripRule;
-import expense_rule_engine.src.services.rules.Violation;
+import expense_rule_engine.models.Expense;
+import expense_rule_engine.models.ExpenseType;
+import expense_rule_engine.services.RuleEngine;
+import expense_rule_engine.services.rules.ExpenseRule;
+import expense_rule_engine.services.rules.TripRule;
+import expense_rule_engine.services.rules.Violation;
 
 public class SimpleRuleEngine implements RuleEngine {
     

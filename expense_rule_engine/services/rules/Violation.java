@@ -1,4 +1,4 @@
-package expense_rule_engine.src.services.rules;
+package expense_rule_engine.services.rules;
 
 public class Violation {
     private final String message;
@@ -9,5 +9,9 @@ public class Violation {
 
     public static Violation of(String message){
         return new Violation(message);
+    }
+
+    public String getMessage(){
+        return message;
     }
 }

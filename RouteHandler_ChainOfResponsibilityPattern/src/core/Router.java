@@ -6,13 +6,14 @@ import models.Response;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class Router {
-    TrieNode root;
+    private TrieNode root;
 
-    ReadWriteLock lock = new ReentrantReadWriteLock();
+    private ReadWriteLock lock = new ReentrantReadWriteLock();
 
     public Router() {
         root = new TrieNode();
@@ -35,7 +36,7 @@ public class Router {
         }
     }
 
-    public void callRoute(HttpMethod method, String url) {
+    public void callRoute(HttpMethod method, String url, String body, Map<String, String> headers) {
         lock.readLock().lock();
         try {
             String[] words =  url.split("/");
@@ -43,10 +44,15 @@ public class Router {
 
             dfs(root, words, 1, matches);
 
+            if(matches.isEmpty()) {
+                Response response = new Response();
+                response.sendResponse(404, "Route not found: " + method + " " + url);
+            }
+
             for(TrieNode node : matches) {
                 List<Middleware> chain = node.handlers.get(method);
                 if(chain != null) {
-                    Request req = new Request(method, url);
+                    Request req = new Request(method, url, body, headers);
                     Response res = new Response();
                     executeChain(chain, req, res);
                 }
@@ -90,7 +96,7 @@ public class Router {
         }
 
         Middleware m = middlewares.get(level);
-        Runnable next = () -> executeFromIndex(middlewares, level + 1, request, response);
+        NextHandler next = () -> executeFromIndex(middlewares, level + 1, request, response);
 
         m.handle(request, response, next);
     }
